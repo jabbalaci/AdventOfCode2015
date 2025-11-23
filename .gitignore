@@ -168,7 +168,5 @@ old/
 _work_in_progress/
 
 # Free Pascal
-part1
-part2
 *.o
 *.ppu
