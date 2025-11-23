@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+"""
+I could find the bug in D thanks to this Python implementation.
+"""
+
 import re
 
 

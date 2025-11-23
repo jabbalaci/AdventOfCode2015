@@ -1,12 +1,5 @@
 #!/usr/bin/env rdmd
 
-/*
-This solution is buggy due to an error in std.regex .
-More info here:
-* https://forum.dlang.org/thread/hmwpyrhomcshjmqwkzdx@forum.dlang.org
-* https://github.com/dlang/phobos/issues/10152
-*/
-
 module part2_workaround;
 
 import std.algorithm;
