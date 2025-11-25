@@ -167,6 +167,7 @@ cython_debug/
 old/
 _work_in_progress/
 a.out
+proba/
 
 # Free Pascal
 *.o
