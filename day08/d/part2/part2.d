@@ -1,9 +1,6 @@
 #!/usr/bin/env rdmd
 
-import std.algorithm;
-import std.array;
 import std.file;
-import std.regex;
 import std.stdio;
 import std.string;
 import std.typecons;
@@ -12,12 +9,25 @@ alias Pair = Tuple!(int, int);
 
 Pair process(const string line)
 {
-    string s = line[1 .. $ - 1];
-    s = s.replace(`\\`, ".");
-    s = s.replace(`\"`, ".");
-    s = s.replaceAll(regex(`\\x[0-9a-f]{2}`), ".");
+    char[] s;
+    s ~= '"';
+    foreach (c; line)
+    {
+        switch (c)
+        {
+        case '"':
+            s ~= `\"`;
+            break;
+        case '\\':
+            s ~= `\\`;
+            break;
+        default:
+            s ~= c;
+        }
+    }
+    s ~= '"';
 
-    return tuple(cast(int) line.length, cast(int) s.length);
+    return tuple(cast(int) s.length, cast(int) line.length);
 }
 
 void main()
